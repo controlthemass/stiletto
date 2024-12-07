@@ -132,6 +132,15 @@ ul li a {
   color: #09090b;
 }
 
+.black_badge_component {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #09090b;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: #fafafa;
+}
+
 .diamond_badge_component {
   background: rgb(34, 193, 195);
   background: linear-gradient(93deg, rgb(34, 193, 195) 0%, rgb(45, 112, 253) 100%);
@@ -926,6 +935,124 @@ ul li a {
     transform: translate(-50%, -50%) scale(1);
   }
 }
+.copy_component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+.copy_component input {
+  background-color: transparent;
+  border: 0;
+  width: 255px;
+  color: #fafafa;
+  font-size: 1rem;
+  outline: 0;
+}
+.copy_component button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.copy_component button img {
+  width: 40px;
+}
+
+@media (max-width: 380px) {
+  .copy_component {
+    gap: 0px;
+  }
+}
+.contact_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact_wrapper h1 {
+  font-size: 3rem;
+  color: #fafafa;
+}
+.contact_wrapper p {
+  max-width: 50ch;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #a1a1aa;
+}
+.contact_wrapper input,
+.contact_wrapper button,
+.contact_wrapper textarea {
+  max-width: 400px !important;
+  width: 95% !important;
+}
+.contact_wrapper textarea {
+  height: 150px;
+}
+
+.register_form_component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 5%;
+}
+.register_form_component h1 {
+  text-align: center;
+  color: white;
+}
+.register_form_component input,
+.register_form_component button {
+  width: 95%;
+  max-width: 720px;
+}
+.register_form_component a {
+  color: gray;
+  text-decoration: none;
+}
+
+.forum_theme_component {
+  padding: 10px 20px;
+  background-color: #fafafa;
+  border-radius: 5px;
+  width: 40%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.forum_theme_component .by_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10px;
+  gap: 10px;
+}
+.forum_theme_component p {
+  margin: 5px 0;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.forum_theme_component span {
+  display: block;
+}
+.forum_theme_component a {
+  text-decoration: none;
+}
+@media (max-width: 1500px) {
+  .forum_theme_component {
+    width: 80%;
+  }
+}
+@media (max-width: 800px) {
+  .forum_theme_component {
+    width: 92%;
+  }
+}
+
 .docs_header {
   font-size: 2rem;
   background: #394acf;
@@ -1082,14 +1209,6 @@ code {
   color: white !important;
   background-color: transparent !important;
   cursor: default;
-}
-
-.soon {
-  color: #2599cf;
-}
-
-.js {
-  color: yellow;
 }
 
 .info {

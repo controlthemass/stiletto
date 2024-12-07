@@ -136,6 +136,13 @@ ul {
   border-radius: 20px;
   color: $base_color;
 }
+.black_badge_component {
+  width: fit-content;
+  background-color: $base_color;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: $secondary_color;
+}
 .diamond_badge_component {
   background: rgb(34, 193, 195);
   background: -moz-linear-gradient(
@@ -951,6 +958,119 @@ ul {
     transform: translate(-50%, -50%) scale(1);
   }
 }
+.copy_component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+  input {
+    background-color: transparent;
+    border: 0;
+    width: 255px;
+    color: $secondary_color;
+    font-size: 1rem;
+    outline: 0;
+  }
+  button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    img {
+      width: 40px;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .copy_component {
+    gap: 0px;
+  }
+}
+
+.contact_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  h1 {
+    font-size: 3rem;
+    color: $secondary_color;
+  }
+  p {
+    max-width: 50ch;
+    text-align: center;
+    font-size: 1.3rem;
+    color: $font_color;
+  }
+  input,
+  button,
+  textarea {
+    max-width: 400px !important;
+    width: 95% !important;
+  }
+  textarea {
+    height: 150px;
+  }
+}
+.register_form_component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 5%;
+  h1 {
+    text-align: center;
+    color: white;
+  }
+  input,
+  button {
+    width: 95%;
+    max-width: 720px;
+  }
+  a {
+    color: gray;
+    text-decoration: none;
+  }
+}
+.forum_theme_component {
+  padding: 10px 20px;
+  background-color: $secondary_color;
+  border-radius: 5px;
+  width: 40%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  .by_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+    gap: 10px;
+  }
+  p {
+    margin: 5px 0;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  span {
+    display: block;
+  }
+  a {
+    text-decoration: none;
+  }
+  @media (max-width: 1500px) {
+    width: 80%;
+  }
+  @media (max-width: 800px) {
+    width: 92%;
+  }
+}
+
 //FRAMEWORK END
 //FRAMEWORK END
 //FRAMEWORK END
@@ -1137,12 +1257,6 @@ code {
   color: white !important;
   background-color: transparent !important;
   cursor: default;
-}
-.soon {
-  color: #2599cf;
-}
-.js {
-  color: yellow;
 }
 .info {
   font-size: 0.75rem;

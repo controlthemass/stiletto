@@ -49,18 +49,23 @@ let pfp = document.querySelector(".pfp");
 let preheader = document.querySelector(".preheader");
 let postfooter = document.querySelector(".postfooter");
 let error_page = document.querySelector(".error_page");
-let register = document.querySelector(".register");
+let login = document.querySelector(".login");
 let option = document.querySelector(".option");
 let progress_bar = document.querySelector(".progress_bar");
 let testimonial = document.querySelector(".testimonial");
 let scroll = document.querySelector(".scroll");
 let toggle = document.querySelector(".toggle");
-
+let copy_component = document.querySelector(".copy_component");
+let contact = document.querySelector(".contact_component");
+let forum_theme = document.querySelector(".forum_theme");
+let register = document.querySelector(".register");
+let cs_code = document.querySelector(".cs_code");
 let classes = [
   input,
   button,
   checkbox,
   radio_group,
+  forum_theme,
   textarea,
   tooltip,
   alert_dialog,
@@ -71,6 +76,7 @@ let classes = [
   mini_card,
   success_message,
   error_message,
+  copy_component,
   highlight,
   datalist,
   installation,
@@ -82,17 +88,20 @@ let classes = [
   sheet,
   pfp,
   preheader,
+  register,
   postfooter,
   error_page,
-  register,
+  login,
   option,
   progress_bar,
   testimonial,
   scroll,
   toggle,
+  contact,
 ];
 for (let i = 0; i < classes.length; i++) {
   classes[i].addEventListener("click", () => {
+    cs_code.scrollTo(0, 0);
     classes.forEach((el) => {
       el.classList.remove("selected_button");
       classes[i].classList.add("selected_button");
@@ -881,7 +890,7 @@ label {
         }
         break;
 
-      case "badge":
+      case "🟢 badge":
         content_side.innerHTML = `<span class='badge_component'>Badge</span>`;
         content_side_2.innerHTML = `<span class='gold_badge_component'>Gold badge</span>`;
         content_side_3.innerHTML = `<span class='diamond_badge_component'>Diamond badge</span>`;
@@ -889,7 +898,8 @@ label {
         content_side_5.innerHTML = `<span class="simple_verified_badge_component">Verified</span>`;
         content_side_6.innerHTML = `<span class="simple_danger_badge_component">Danger</span>`;
         content_side_7.innerHTML = `<span class="simple_warning_badge_component">Warning</span>`;
-
+        content_side_8.innerHTML = `<span class="black_badge_component">Badge</span>`;
+        html_code_8.innerText = `<span class="black_badge_component">Badge</span>`;
         html_code.innerText = `<span class='badge_component'>Badge</span>`;
         html_code_2.innerText = `<span class='gold_badge_component'>Gold badge</span>`;
         css_code_2.innerText = `
@@ -1010,6 +1020,14 @@ label {
   background-color: white;
   padding: 5px 10px;
   border-radius: 20px;
+}`;
+        css_code_8.innerText = `
+.black_badge_component {
+  width: fit-content;
+  background-color: $base_color;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: $secondary_color;
 }`;
         let g = document.getElementsByTagName("code");
         for (let i = 0; i < g.length; i++) {
@@ -1993,8 +2011,7 @@ li {
         </details>
         <p class="answer">
           this is answer three. this is answer three. this is answer three. this
-          is answer three. this is answer three. this is answer three. this is
-          answer three.
+          is answer three. 
         </p>
       </div>
     </div>
@@ -2018,9 +2035,7 @@ li {
       <summary>this is question three.</summary>
     </details>
     <p class="answer">
-      this is answer three. this is answer three. this is answer three. this
-      is answer three. this is answer three. this is answer three. this is
-      answer three.
+      this is answer three. this is answer three. 
     </p>
   </div>
 </div>`;
@@ -2498,7 +2513,7 @@ li {
           Prism.highlightElement(codeEls[i]);
         }
         break;
-      case "register":
+      case "login":
         content_side.innerHTML = "";
         content_side_2.innerHTML = "";
         content_side_3.innerHTML = "";
@@ -3043,6 +3058,403 @@ li {
 
           Prism.highlightElement(cc[i]);
         }
+        break;
+      case "🟢🟡 copy":
+        content_side.innerHTML = "";
+        content_side_2.innerHTML = "";
+        content_side_3.innerHTML = "";
+        content_side_4.innerHTML = "";
+        content_side_5.innerHTML = "";
+        content_side_6.innerHTML = "";
+        content_side_7.innerHTML = "";
+        content_side_8.innerHTML = "";
+
+        html_code.innerText = "";
+        html_code_2.innerText = "";
+        html_code_3.innerText = "";
+        html_code_4.innerText = "";
+        html_code_5.innerText = "";
+        html_code_6.innerText = "";
+        html_code_7.innerText = "";
+        html_code_8.innerText = "";
+
+        css_code.innerText = "";
+        css_code_2.innerText = "";
+        css_code_3.innerText = "";
+        css_code_4.innerText = "";
+        css_code_5.innerText = "";
+        css_code_6.innerText = "";
+        css_code_7.innerText = "";
+        css_code_8.innerText = "";
+
+        content_side.innerHTML = `
+<div class="copy_component">
+    <input
+      type="text"
+      value="https://projekatideje.onrender.com/"
+      class="copy_input"
+      readonly="readonly"
+    />
+    <button class="copy_button">
+      <img
+        src="https://ik.imagekit.io/ks1jccgtg/copy-svgrepo-com.svg?updatedAt=1733319756265"
+        alt="copy_icon"
+      />
+    </button>
+</div>`;
+        html_code.innerText = `
+<div class="copy_component">
+  <input
+    type="text"
+    value="https://projekatideje.onrender.com/"
+    class="copy_input"
+    readonly="readonly"
+  />
+  <button class="copy_button">
+    <img
+      src="https://ik.imagekit.io/ks1jccgtg/copy-svgrepo-com.svg?updatedAt=1733319756265"
+      alt="copy_icon"
+    />
+  </button>
+</div>`;
+        css_code.innerText = `
+.copy_component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+  input {
+    background-color: transparent;
+    border: 0;
+    width: 255px;
+    color: base.$secondary_color;
+    font-size: 1rem;
+    outline: 0;
+  }
+  button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    img {
+      width: 40px;
+    }
+  }
+}`;
+        let c3c = document.getElementsByTagName("code");
+        for (let i = 0; i < c3c.length; i++) {
+          // Zameni <br> tagove sa novim redovima
+          c3c[i].innerHTML = c3c[i].innerHTML.replace(/<br\s*\/?>/gi, "\n");
+
+          // Ponovno isticanje sintakse za element
+
+          Prism.highlightElement(c3c[i]);
+        }
+        let copy_button = document.querySelector(".copy_button");
+        copy_button.addEventListener("click", () => {
+          let copy_input = document.querySelector(".copy_input");
+          copy_input.select();
+          copy_input.setSelectionRange(0, 9999);
+          navigator.clipboard.writeText(copy_input.value);
+        });
+        break;
+      case "🟢 contact":
+        content_side.innerHTML = "";
+        content_side_2.innerHTML = "";
+        content_side_3.innerHTML = "";
+        content_side_4.innerHTML = "";
+        content_side_5.innerHTML = "";
+        content_side_6.innerHTML = "";
+        content_side_7.innerHTML = "";
+        content_side_8.innerHTML = "";
+
+        html_code.innerText = "";
+        html_code_2.innerText = "";
+        html_code_3.innerText = "";
+        html_code_4.innerText = "";
+        html_code_5.innerText = "";
+        html_code_6.innerText = "";
+        html_code_7.innerText = "";
+        html_code_8.innerText = "";
+
+        css_code.innerText = "";
+        css_code_2.innerText = "";
+        css_code_3.innerText = "";
+        css_code_4.innerText = "";
+        css_code_5.innerText = "";
+        css_code_6.innerText = "";
+        css_code_7.innerText = "";
+        css_code_8.innerText = "";
+        html_code.innerText = `
+<div class="contact_wrapper">
+  <h1>CONTACT ME</h1>
+  <p>
+    You can contact me via form below.
+  </p>
+  <input type="text" placeholder="Email" class="input_component" />
+  <textarea placeholder="Message" class="textarea_component message"></textarea>
+  <button class="button_component">Send message</button>
+</div>`;
+        css_code.innerText = `
+.contact_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  h1 {
+    font-size: 3rem;
+    color: $secondary_color;
+  }
+  p {
+    max-width: 50ch;
+    text-align: center;
+    font-size: 1.3rem;
+    color: $font_color;
+  }
+  input,
+  button,
+  textarea {
+    max-width:400px !important;
+    width: 95% !important;
+  }
+  textarea {
+    height: 150px;
+  }
+}`;
+        content_side.innerHTML = `
+        <div class="contact_wrapper">
+  <h1>CONTACT ME</h1>
+  <p>
+    You can contact me via form below.
+  </p>
+  <input type="text" placeholder="Email" class="input_component" />
+  <textarea placeholder="Message" class="textarea_component message"></textarea>
+  <button class="button_component">Send message</button>
+</div>
+        `;
+        let c32c = document.getElementsByTagName("code");
+        for (let i = 0; i < c32c.length; i++) {
+          // Zameni <br> tagove sa novim redovima
+          c32c[i].innerHTML = c32c[i].innerHTML.replace(/<br\s*\/?>/gi, "\n");
+
+          // Ponovno isticanje sintakse za element
+
+          Prism.highlightElement(c32c[i]);
+        }
+        break;
+      case "🟢 register":
+        content_side.innerHTML = "";
+        content_side_2.innerHTML = "";
+        content_side_3.innerHTML = "";
+        content_side_4.innerHTML = "";
+        content_side_5.innerHTML = "";
+        content_side_6.innerHTML = "";
+        content_side_7.innerHTML = "";
+        content_side_8.innerHTML = "";
+
+        html_code.innerText = "";
+        html_code_2.innerText = "";
+        html_code_3.innerText = "";
+        html_code_4.innerText = "";
+        html_code_5.innerText = "";
+        html_code_6.innerText = "";
+        html_code_7.innerText = "";
+        html_code_8.innerText = "";
+
+        css_code.innerText = "";
+        css_code_2.innerText = "";
+        css_code_3.innerText = "";
+        css_code_4.innerText = "";
+        css_code_5.innerText = "";
+        css_code_6.innerText = "";
+        css_code_7.innerText = "";
+        css_code_8.innerText = "";
+        content_side.innerHTML = `
+<div class="register_form_component">
+  <h1>Register</h1>
+  <input
+    placeholder="Username"
+    type="text"
+    class="username input_component"
+    bind:this={username}
+  />
+  <input
+    placeholder="Password"
+    type="password"
+    class="password input_component"
+    bind:this={password}
+  />
+  <input
+    placeholder="Repeat password"
+    type="password"
+    class="repeat_password input_component"
+    bind:this={repeat_password}
+  />
+  <button
+    class="button_component create_account"
+    bind:this={create_account}
+    on:click={create}
+  >
+    Register
+</button>`;
+        html_code.innerText = `
+<div class="register_form_component">
+  <h1>Napravi nalog</h1>
+  <input
+    placeholder="Username"
+    type="text"
+    class="username input_component"
+    bind:this={username}
+  />
+  <input
+    placeholder="Password"
+    type="password"
+    class="password input_component"
+    bind:this={password}
+  />
+  <input
+    placeholder="Repeat password"
+    type="password"
+    class="repeat_password input_component"
+    bind:this={repeat_password}
+  />
+  <button
+    class="button_component create_account"
+    bind:this={create_account}
+    on:click={create}
+  >
+    Register
+</button>`;
+        css_code.innerText = `
+.register_form_component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 5%;
+  h1 {
+    text-align: center;
+    color: white;
+  }
+  input,
+  button {
+    width: 95%;
+    max-width: 720px;
+  }
+  a {
+    color: gray;
+    text-decoration: none;
+  }
+}`;
+        let c32c2 = document.getElementsByTagName("code");
+        for (let i = 0; i < c32c2.length; i++) {
+          // Zameni <br> tagove sa novim redovima
+          c32c2[i].innerHTML = c32c2[i].innerHTML.replace(/<br\s*\/?>/gi, "\n");
+
+          // Ponovno isticanje sintakse za element
+
+          Prism.highlightElement(c32c2[i]);
+        }
+        break;
+      case "🟢 forum theme":
+        content_side.innerHTML = "";
+        content_side_2.innerHTML = "";
+        content_side_3.innerHTML = "";
+        content_side_4.innerHTML = "";
+        content_side_5.innerHTML = "";
+        content_side_6.innerHTML = "";
+        content_side_7.innerHTML = "";
+        content_side_8.innerHTML = "";
+
+        html_code.innerText = "";
+        html_code_2.innerText = "";
+        html_code_3.innerText = "";
+        html_code_4.innerText = "";
+        html_code_5.innerText = "";
+        html_code_6.innerText = "";
+        html_code_7.innerText = "";
+        html_code_8.innerText = "";
+
+        css_code.innerText = "";
+        css_code_2.innerText = "";
+        css_code_3.innerText = "";
+        css_code_4.innerText = "";
+        css_code_5.innerText = "";
+        css_code_6.innerText = "";
+        css_code_7.innerText = "";
+        css_code_8.innerText = "";
+        content_side.innerHTML = `
+<div class="forum_theme_component">
+  <p>TITLE</p>
+  <span>SOME DESCRIPTION THAT DOESNT MATTER</span>
+  <a href="#" target="_blank">#</a>
+  <div class="by_wrapper">
+    <span class="black_badge_component">grishatop1</span>
+    <span class="black_badge_component">01.01.1969.</span>
+  </div>
+</div>`;
+        html_code.innerText = `
+<div class="mini_card_component">
+  <p>TITLE</p>
+  <span>SOME DESCRIPTION THAT DOESNT MATTER</span>
+  <a href="#" target="_blank">#</a>
+  <div class="by_wrapper">
+    <span class="black_badge_component">grishatop1</span>
+    <span class="black_badge_component">01.01.1969.</span>
+  </div>
+</div>
+`;
+        css_code.innerText = `
+.forum_theme_component {
+  padding: 10px 20px;
+  background-color: $secondary_color;
+  border-radius: 5px;
+  width: 40%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  .by_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+    gap: 10px;
+  }
+  p {
+    margin: 5px 0;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  span {
+    display: block;
+  }
+  a {
+    text-decoration: none;
+  }
+  @media (max-width: 1500px) {
+    width: 80%;
+  }
+  @media (max-width: 800px) {
+    width: 92%;
+  }
+}`;
+        let ac32c2 = document.getElementsByTagName("code");
+        for (let i = 0; i < ac32c2.length; i++) {
+          // Zameni <br> tagove sa novim redovima
+          ac32c2[i].innerHTML = ac32c2[i].innerHTML.replace(
+            /<br\s*\/?>/gi,
+            "\n"
+          );
+
+          // Ponovno isticanje sintakse za element
+
+          Prism.highlightElement(ac32c2[i]);
+        }
+        break;
     }
   });
 }
