@@ -22,6 +22,23 @@ let css_code_7 = document.querySelector(".css_code_7");
 let content_side_8 = document.querySelector(".content_side_8");
 let html_code_8 = document.querySelector(".html_code_8");
 let css_code_8 = document.querySelector(".css_code_8");
+let js_code = document.querySelector(".js_code");
+let js_code_2 = document.querySelector(".js_code_2");
+let js_code_3 = document.querySelector(".js_code_3");
+let js_code_4 = document.querySelector(".js_code_4");
+let js_code_5 = document.querySelector(".js_code_5");
+let js_code_6 = document.querySelector(".js_code_6");
+let js_code_7 = document.querySelector(".js_code_7");
+let js_code_8 = document.querySelector(".js_code_8");
+
+let group_2 = document.querySelector(".group_2");
+let group_3 = document.querySelector(".group_3");
+let group_4 = document.querySelector(".group_4");
+let group_5 = document.querySelector(".group_5");
+let group_6 = document.querySelector(".group_6");
+let group_7 = document.querySelector(".group_7");
+let group_8 = document.querySelector(".group_8");
+
 let installation = document.querySelector(".installation");
 let input = document.querySelector(".input");
 let button = document.querySelector(".button");
@@ -31,7 +48,6 @@ let textarea = document.querySelector(".textarea");
 let tooltip = document.querySelector(".tooltip");
 let alert_dialog = document.querySelector(".alert_dialog");
 let badge = document.querySelector(".badge");
-let create_dialog = document.querySelector(".create_dialog");
 let menubar = document.querySelector(".menubar");
 let micro_card = document.querySelector(".micro_card");
 let mini_card = document.querySelector(".mini_card");
@@ -60,6 +76,110 @@ let contact = document.querySelector(".contact_component");
 let forum_theme = document.querySelector(".forum_theme");
 let register = document.querySelector(".register");
 let cs_code = document.querySelector(".cs_code");
+let body = document.getElementsByTagName("body");
+
+function myFunction(el) {
+  const range = document.createRange();
+  const selection = window.getSelection();
+  range.selectNodeContents(el);
+  selection.removeAllRanges();
+  selection.addRange(range);
+  navigator.clipboard
+    .writeText(el.innerText)
+    .then(() => {
+      body[0].classList.add("green_blink");
+      setTimeout(() => {
+        body[0].classList.remove("green_blink");
+      }, 500);
+    })
+    .catch((err) => {
+      console.error("Failed to copy text: ", err);
+    });
+  selection.removeAllRanges();
+}
+
+html_code.addEventListener("click", () => {
+  myFunction(html_code);
+});
+html_code_2.addEventListener("click", () => {
+  myFunction(html_code_2);
+});
+html_code_3.addEventListener("click", () => {
+  myFunction(html_code_3);
+});
+html_code_4.addEventListener("click", () => {
+  myFunction(html_code_4);
+});
+html_code_5.addEventListener("click", () => {
+  myFunction(html_code_5);
+});
+html_code_6.addEventListener("click", () => {
+  myFunction(html_code_6);
+});
+html_code_7.addEventListener("click", () => {
+  myFunction(html_code_7);
+});
+html_code_8.addEventListener("click", () => {
+  myFunction(html_code_8);
+});
+
+css_code.addEventListener("click", () => {
+  myFunction(css_code);
+});
+css_code_2.addEventListener("click", () => {
+  myFunction(css_code_2);
+});
+css_code_3.addEventListener("click", () => {
+  myFunction(css_code_3);
+});
+css_code_4.addEventListener("click", () => {
+  myFunction(css_code_4);
+});
+css_code_5.addEventListener("click", () => {
+  myFunction(css_code_5);
+});
+css_code_6.addEventListener("click", () => {
+  myFunction(css_code_6);
+});
+css_code_7.addEventListener("click", () => {
+  myFunction(css_code_7);
+});
+css_code_8.addEventListener("click", () => {
+  myFunction(css_code_8);
+});
+
+js_code.addEventListener("click", () => {
+  myFunction(js_code);
+});
+
+js_code_2.addEventListener("click", () => {
+  myFunction(js_code_2);
+});
+
+js_code_3.addEventListener("click", () => {
+  myFunction(js_code_3);
+});
+
+js_code_4.addEventListener("click", () => {
+  myFunction(js_code_4);
+});
+
+js_code_5.addEventListener("click", () => {
+  myFunction(js_code_5);
+});
+
+js_code_6.addEventListener("click", () => {
+  myFunction(js_code_6);
+});
+
+js_code_7.addEventListener("click", () => {
+  myFunction(js_code_7);
+});
+
+js_code_8.addEventListener("click", () => {
+  myFunction(js_code_8);
+});
+copy_component.style.marginTop = "0";
 let classes = [
   input,
   button,
@@ -70,7 +190,6 @@ let classes = [
   tooltip,
   alert_dialog,
   badge,
-  create_dialog,
   menubar,
   micro_card,
   mini_card,
@@ -99,8 +218,32 @@ let classes = [
   toggle,
   contact,
 ];
+const clickI = () => {
+  installation.click();
+};
+window.onload = clickI;
 for (let i = 0; i < classes.length; i++) {
   classes[i].addEventListener("click", () => {
+    setTimeout(() => {
+      for (let j = 2; j <= 8; j++) {
+        const htmlCode = document.querySelector(`.html_code_${j}`);
+        const group = document.querySelector(`.group_${j}`);
+
+        if (htmlCode && group) {
+          const content = htmlCode.textContent.trim();
+          console.log(`html_code_${j}:`, content);
+
+          if (content === "") {
+            group.classList.remove("block");
+            group.classList.add("none");
+          } else {
+            group.classList.add("block");
+            group.classList.remove("none");
+          }
+        }
+      }
+    }, 100);
+
     cs_code.scrollTo(0, 0);
     classes.forEach((el) => {
       el.classList.remove("selected_button");
@@ -134,6 +277,15 @@ for (let i = 0; i < classes.length; i++) {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
 
         content_side.innerHTML = `
         <h1 class='docs_header'>STILETTO SETUP</h1>`;
@@ -189,6 +341,7 @@ ul {
     }
   }
 }`;
+
         let codeElementssv = document.getElementsByTagName("code");
         for (let i = 0; i < codeElementssv.length; i++) {
           codeElementssv[i].innerHTML = codeElementssv[i].innerHTML.replace(
@@ -198,7 +351,7 @@ ul {
           Prism.highlightElement(codeElementssv[i]);
         }
         break;
-      case "🟡 input":
+      case "input":
         content_side.innerHTML = "";
         content_side_2.innerHTML = "";
         content_side_3.innerHTML = "";
@@ -225,6 +378,14 @@ ul {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
         <input class='input_component' placeholder='input text' type='text'>`;
         content_side_2.innerHTML = `
@@ -320,28 +481,45 @@ ul {
             outline: 1px solid $secondary_color;
     }
 }`;
-        css_code_4.innerText = `.image_upload_component {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
-    border: 1px solid gray;
-    width: 400px;
-    height: 300px;
-    padding: 20px;
-    border-radius: 4px;
-    p {
-    color: white;
-    }
-    .selected_profile_picture {
+        css_code_4.innerText = `
+.image_upload_component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid $touch_color;
+  width: 400px;
+  height: 300px;
+  padding: 20px;
+  border-radius: 4px;
+  p {
+    color: $secondary_color;
+  }
+  .selected_profile_picture {
     width: 150px;
     height: 150px;
     object-fit: cover;
     border-radius: 200px;
-    }
-}
-`;
+  }
+}`;
+        js_code_4.innerText = `
+let file_selector = document.querySelector(".file_selector");
+let get_file = document.querySelector(".get_file");
+let selected_profile_picture = document.querySelector(
+  ".selected_profile_picture"
+);
+file_selector.addEventListener("click", () => {
+  get_file.click();
+});
+get_file.addEventListener("change", () => {
+  const [file] = get_file.files;
+  if (file) {
+    selected_profile_picture.src = URL.createObjectURL(file);
+  } else {
+    selected_profile_picture.src = "./default.jpg";
+  }
+});`;
         css_code_3.innerText = `.input_component {
     border: 1px solid $touch_color;
     background-color: transparent;
@@ -416,6 +594,14 @@ ul {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
 <button class='button_component'>button</button>`;
         content_side_2.innerHTML = `
@@ -570,6 +756,14 @@ ul {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `<label class='checkbox_component'> <input type='checkbox' /> <span>Checkbox</span></label>`;
         html_code.innerText = `
 <label class='checkbox_component'> <input type='checkbox' /> <span>Checkbox</span></label>`;
@@ -637,6 +831,15 @@ input[type="checkbox"] {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML =
           "<form class='radio_group_component'><input type='radio' id='html' value='html' name='language'><label for='html'>HTML</label><br><input type='radio' id='css' value='css' name='language'><label for='css'>CSS</label><br><input type='radio' id='javascript' value='javascript' name='language'><label for='javascript'>JAVASCRIPT</label><br></form>";
         html_code.innerText = `
@@ -702,6 +905,15 @@ label {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `<textarea class='textarea_component' placeholder='textarea'></textarea>`;
         content_side_2.innerHTML = `
                 <textarea
@@ -728,16 +940,15 @@ label {
         css_code_2.innerText = `
 .non_resize_textarea_component {
   resize: none;
-  color: #fafafa;
+  color: $secondary_color;
   background-color: transparent;
-  border: 1px solid #27272a;
+  border: 1px solid $touch_color;
   border-radius: 8px;
   padding: 5px 10px;
   &:focus {
-    outline: 1px solid #fafafa;
+    outline: 1px solid $secondary_color;
   }
-}
-`;
+}`;
 
         let codeEleme = document.getElementsByTagName("code");
         for (let i = 0; i < codeEleme.length; i++) {
@@ -779,11 +990,20 @@ label {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML =
           "<div class='tooltip_component'>Tooltip content</div>";
 
         break;
-      case "🟡 alert dialog":
+      case "alert dialog":
         content_side.innerHTML = "";
         content_side_2.innerHTML = "";
         content_side_3.innerHTML = "";
@@ -810,6 +1030,15 @@ label {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
         <button class='button_component' onclick="openDialog()">Show dialog</button>
         <dialog class='alert_dialog_component'>
@@ -879,6 +1108,22 @@ label {
     transform: translate(-50%, -50%) scale(1);
   }
 }`;
+        js_code.innerText = `
+const openDialog = () => {
+  const dialog = document.querySelector(".alert_dialog_component");
+  dialog.showModal();
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) {
+      closeDialog();
+    }
+  });
+  dialog.style.animation = "fadeInScale 0.3s ease forwards";
+};
+
+const closeDialog = () => {
+  const dialog = document.querySelector(".alert_dialog_component");
+  dialog.close();
+};`;
         let gv = document.getElementsByTagName("code");
         for (let i = 0; i < gv.length; i++) {
           // Zameni <br> tagove sa novim redovima
@@ -890,7 +1135,7 @@ label {
         }
         break;
 
-      case "🟢 badge":
+      case "badge":
         content_side.innerHTML = `<span class='badge_component'>Badge</span>`;
         content_side_2.innerHTML = `<span class='gold_badge_component'>Gold badge</span>`;
         content_side_3.innerHTML = `<span class='diamond_badge_component'>Diamond badge</span>`;
@@ -905,7 +1150,6 @@ label {
         css_code_2.innerText = `
 .gold_badge_component {
   width: fit-content;
-  background-color: white;
   padding: 5px 10px;
   border-radius: 20px;
 }
@@ -933,7 +1177,6 @@ label {
         css_code_3.innerText = `
 .diamond_badge_component {
   width: fit-content;
-  background-color: white;
   padding: 5px 10px;
   border-radius: 20px;
 }
@@ -961,7 +1204,6 @@ label {
         css_code_4.innerText = `
 .verified_badge_component {
   width: fit-content;
-  background-color: white;
   padding: 5px 10px;
   border-radius: 20px;
 }
@@ -997,9 +1239,9 @@ label {
         html_code_6.innerText = `<span class="simple_danger_badge_component">Danger</span>`;
         css_code_6.innerText = `
 .simple_danger_badge_component {
-  background-color: #2a0202; // Dark red background
-  border: 2px solid #4b0202; // Red border
-  color: #dc0000; // Bright red text
+  background-color: #2a0202;
+  border: 2px solid #4b0202; 
+  color: #dc0000; 
   width: fit-content;
   padding: 3px 8px;
   border-radius: 4px;
@@ -1007,9 +1249,9 @@ label {
         html_code_7.innerText = `<span class="simple_warning_badge_component">Warning</span>`;
         css_code_7.innerText = `
 .simple_warning_badge_component {
-  background-color: #2a1b02; // Dark orange background
-  border: 2px solid #7e6700; // Orange border
-  color: #dc8200; // Bright orange text
+  background-color: #2a1b02; 
+  border: 2px solid #7e6700; 
+  color: #dc8200; 
   width: fit-content;
   padding: 3px 8px;
   border-radius: 4px;
@@ -1017,7 +1259,7 @@ label {
         css_code.innerText = `
 .badge_component {
   width: fit-content;
-  background-color: white;
+  background-color: $secondary_color;
   padding: 5px 10px;
   border-radius: 20px;
 }`;
@@ -1038,36 +1280,6 @@ label {
 
           Prism.highlightElement(g[i]);
         }
-        break;
-      case "create dialog":
-        content_side.innerHTML = "";
-        content_side_2.innerHTML = "";
-        content_side_3.innerHTML = "";
-        content_side_4.innerHTML = "";
-        content_side_5.innerHTML = "";
-        content_side_6.innerHTML = "";
-        content_side_7.innerHTML = "";
-        content_side_8.innerHTML = "";
-
-        html_code.innerText = "";
-        html_code_2.innerText = "";
-        html_code_3.innerText = "";
-        html_code_4.innerText = "";
-        html_code_5.innerText = "";
-        html_code_6.innerText = "";
-        html_code_7.innerText = "";
-        html_code_8.innerText = "";
-
-        css_code.innerText = "";
-        css_code_2.innerText = "";
-        css_code_3.innerText = "";
-        css_code_4.innerText = "";
-        css_code_5.innerText = "";
-        css_code_6.innerText = "";
-        css_code_7.innerText = "";
-        css_code_8.innerText = "";
-        content_side.innerHTML =
-          "<div class='create_dialog_component'>Create dialog content</div>";
         break;
       case "menubar":
         content_side.innerHTML = "";
@@ -1096,6 +1308,15 @@ label {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML =
           "<nav class='menubar_component'> <p>Home</p> <p>Dashboard</p> <p>Forum</p> <p>Profile</p> </nav>";
         html_code.innerText = `
@@ -1156,6 +1377,15 @@ border-radius: 5px;
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML =
           "<div class='micro_card_component'><img src='circle.svg' alt='micro card content'><p>Micro card</p></div>";
         html_code.innerText = `
@@ -1213,6 +1443,15 @@ border-radius: 5px;
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML =
           "<div class='mini_card_component'><img src='circle.svg' alt='mini card content'><p>Mini card</p><span>this is a circle, thats it, also circles are better than squares</span></div> ";
         content_side_2.innerHTML = `
@@ -1312,6 +1551,14 @@ border-radius: 5px;
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML =
           '<p class="success_message_component">success message</p>';
 
@@ -1358,6 +1605,14 @@ border-radius: 5px;
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML =
           '<p class="error_message_component">error message</p>';
 
@@ -1404,6 +1659,14 @@ border-radius: 5px;
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `<p class="highlight_text">This is some <span class="highlight_component">random</span> text</p>`;
         content_side_2.innerHTML = `<p class="highlight_text">This is some <span class="solid_underline_highlight_component">random</span> text</p>`;
         content_side_3.innerHTML = `<p class="highlight_text">This is some <span class="dashed_underline_highlight_component">random</span> text</p>`;
@@ -1482,6 +1745,14 @@ border-radius: 5px;
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML =
           "<div class='datalist_component'> <div class='datalist_row'> <span class='datalist_key'>key</span> <span class='datalist_value'>value</span> </div> <div class='datalist_row'> <span class='datalist_key'>key</span> <span class='datalist_value'>value</span> </div><div class='datalist_row'> <span class='datalist_key'>key</span> <span class='datalist_value'>value</span> </div> </div>";
 
@@ -1562,6 +1833,14 @@ border-radius: 5px;
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
             <div class="product_card_component">
               <div class="product_card_image">
@@ -1616,7 +1895,7 @@ border-radius: 5px;
       border-radius: 7px 7px 0 0;
       width: 100%;
       height: 100%;
-      object-fit: cover; // Promenili smo sa contain na cover
+      object-fit: cover;
       object-position: top;
       display: block;
     }
@@ -1669,6 +1948,14 @@ border-radius: 5px;
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
       <ul class='list_component'>
          <li>first</li>
@@ -1750,6 +2037,14 @@ li {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
 <header class="header_component">
   <nav>
@@ -1789,7 +2084,7 @@ li {
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: #09090b;
+  background-color: $base_color;
   z-index: 1;
 
   nav {
@@ -1812,7 +2107,7 @@ li {
         padding: 7px 15px;
         font-size: 17px;
         font-weight: 500;
-        color: #fff;
+        color: $secondary_color;
       }
     }
   }
@@ -1821,7 +2116,7 @@ li {
       font-weight: bold;
       text-decoration: none;
       font-size: 1.8rem;
-      color: #fff;
+      color: $secondary_color;
     }
     .menu-icon {
       display: none;
@@ -1832,7 +2127,7 @@ li {
 @media only screen and (max-width: 950px) {
   .menu {
     flex-direction: column;
-    background-color: #09090b;
+    background-color: $base_color;
     align-items: start;
     position: absolute;
     top: 70px;
@@ -1852,7 +2147,7 @@ li {
 
   .menu-icon {
     display: block;
-    color: #fff;
+    color: $secondary_color;
     font-size: 28px;
     cursor: pointer;
   }
@@ -1894,6 +2189,14 @@ li {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
                   <footer class="footer_component">
       <a href="#" class="footer_logo">LOGO</a>
@@ -1928,11 +2231,12 @@ li {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  background-color: $base_color;
   .footer_logo {
     font-weight: bold;
     text-decoration: none;
     font-size: 1.8rem;
-    color: #fff;
+    color: $secondary_color;
   }
   ul {
     display: flex;
@@ -1942,7 +2246,7 @@ li {
     li {
       text-align: center;
       a {
-        color: white;
+        color: $secondary_color;
       }
     }
   }
@@ -1991,6 +2295,14 @@ li {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
                     <div class="accordion_component">
       <div class="accordion_qna_wrapper">
@@ -2043,7 +2355,7 @@ li {
 .accordion_component {
   width: fit-content;
   .accordion_qna_wrapper {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid $secondary_color;
   }
   .answer {
     visibility: hidden;
@@ -2051,7 +2363,7 @@ li {
     max-width: 80ch;
   }
   summary {
-    color: white;
+    color: $secondary_color;
     list-style-type: none;
     padding: 20px;
     transition: 0.3s;
@@ -2059,7 +2371,7 @@ li {
   }
   details[open] + p {
     visibility: visible;
-    color: gray;
+    color: $touch_color;
     padding: 20px;
     animation: animation 0.2s forwards;
   }
@@ -2079,7 +2391,8 @@ li {
   100% {
     margin-top: -30px;
   }
-}`;
+}
+`;
         let vaa = document.getElementsByTagName("code");
         for (let i = 0; i < vaa.length; i++) {
           // Zameni <br> tagove sa novim redovima
@@ -2118,6 +2431,14 @@ li {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
                       <div class="sheet_component">
       <button class="open_sheet button_component">Open sheet</button>
@@ -2125,8 +2446,7 @@ li {
       <div class="sheet_content">
         <button class="close_button_component close_sheet">x</button>
         <p>
-          this is some random text that is used to fill out sheet component, you
-          can also click outside the sheet component to close it.
+          this is some random text that is used to fill out sheet component
         </p>
       </div>
     </div>
@@ -2138,8 +2458,7 @@ li {
   <div class="sheet_content">
     <button class="close_button_component close_sheet">x</button>
     <p>
-      this is some random text that is used to fill out sheet component, you
-      can also click outside the sheet component to close it.
+      this is some random text that is used to fill out sheet component
     </p>
   </div>
 </div>`;
@@ -2151,9 +2470,9 @@ li {
     height: 100vh;
     right: 0;
     top: 0;
-    background-color: #09090b;
-    border-left: 1px solid gray;
-    color: white;
+    background-color: $base_color;
+    border-left: 1px solid $touch_color;
+    color: $secondary_color;
     display: flex;
     align-items: flex-start;
     visibility: hidden;
@@ -2199,7 +2518,21 @@ li {
     animation: hide_sheet_animation 0.15s forwards linear;
   }
 }`;
-
+        js_code.innerText = `
+let open_sheet = document.querySelector(".open_sheet");
+let close_sheet = document.querySelector(".close_sheet");
+let sheet_1 = document.querySelector(".sheet_content");
+let sheet_blur = document.querySelector(".sheet_blur");
+open_sheet.addEventListener("click", () => {
+  sheet_1.classList.add("view");
+  sheet_1.classList.remove("hide");
+  sheet_blur.style.display = "block";
+});
+close_sheet.addEventListener("click", () => {
+  sheet_1.classList.remove("view");
+  sheet_1.classList.add("hide");
+  sheet_blur.style.display = "none";
+});`;
         let aa = document.getElementsByTagName("code");
         for (let i = 0; i < aa.length; i++) {
           // Zameni <br> tagove sa novim redovima
@@ -2253,6 +2586,15 @@ li {
         css_code_7.innerText = "";
         css_code_8.innerText = "";
 
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
+
         content_side.innerHTML = `
                   <img
       src="https://ik.imagekit.io/ks1jccgtg/avatar4.jpg?updatedAt=1726309158660"
@@ -2281,6 +2623,7 @@ li {
   <img
     src="https://ik.imagekit.io/ks1jccgtg/avatar6.jpg?updatedAt=1726309158280"
     alt="User avatar"
+    class="avatar_component"
   />
   <p>User #2033</p>
 </div>`;
@@ -2299,13 +2642,7 @@ li {
   gap: 20px;
   width: fit-content;
   p {
-    color: white;
-  }
-  img {
-    width: 55px;
-    height: 55px;
-    border-radius: 50px;
-    object-fit: cover;
+    color: $secondary_color;
   }
 }`;
 
@@ -2349,6 +2686,14 @@ li {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
 <div class="pre_header_component">
   <p>Welcome to the greatest website of all times.</p>
@@ -2364,7 +2709,7 @@ li {
   padding: 10px;
   text-align: center;
   p {
-    color: white;
+    color: $secondary_color;
   }
 }`;
         let codeEle = document.getElementsByTagName("code");
@@ -2407,6 +2752,15 @@ li {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
                   <div class="post_footer_component">
       <p>Copyright © 2024</p>
@@ -2422,7 +2776,7 @@ li {
   padding: 10px;
   text-align: center;
   p {
-    color: gray;
+    color: $touch_color;
   }
 }`;
         let codeEl = document.getElementsByTagName("code");
@@ -2465,6 +2819,15 @@ li {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
                     <div class="error_page_component">
       <h1 class="error_code">404 :(</h1>
@@ -2482,22 +2845,25 @@ li {
 </div>`;
         css_code.innerText = `
 .error_page_component {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
   h1 {
-    color: white;
+    color: $secondary_color;
   }
   p {
-    color: gray;
+    color: $touch_color;
   }
   a {
-    position: absolute;
-    background-color: white;
+    background-color: $secondary_color;
     cursor: pointer;
-    color: black;
+    color: $base_color;
     padding: 10px 20px;
     border: 0;
     border-radius: 5px;
     text-decoration: none;
-    margin-top: 10px;
   }
 }`;
         let codeEls = document.getElementsByTagName("code");
@@ -2540,6 +2906,15 @@ li {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
 <div class="login_form_component">
   <h1>Log in to your account</h1>
@@ -2566,7 +2941,7 @@ li {
   gap: 20px;
   h1 {
     text-align: center;
-    color: white;
+    color: $secondary_color;
   }
   input,
   button {
@@ -2574,11 +2949,10 @@ li {
     max-width: 720px;
   }
   a {
-    color: gray;
+    color: $touch_color;
     text-decoration: none;
   }
-}
-    `;
+}`;
         let codeE = document.getElementsByTagName("code");
         for (let i = 0; i < codeE.length; i++) {
           // Zameni <br> tagove sa novim redovima
@@ -2616,6 +2990,15 @@ li {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
           <select class="select_component">
 <option selected value="0">Select option</option>
@@ -2638,19 +3021,19 @@ li {
   border: 0;
   outline: 0;
   padding: 10px 15px;
-  color: white;
+  color: $secondary_color;
   border-radius: 4px;
   cursor: pointer;
-  background-color: #09090b;
-  border: 1px solid #27272a;
+  background-color: $base_color;
+  border: 1px solid $touch_color;
   &::-ms-expand {
     display: none;
   }
   &:focus {
-   outline: 1px solid white;
+    outline: 1px solid $secondary_color;
   }
   option {
-    background-color: #09090b;
+    background-color: $base_color;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 }`;
@@ -2691,6 +3074,15 @@ li {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
 <div class="progress_component">
   <div class="progress_value"></div>
@@ -2705,15 +3097,15 @@ li {
 .progress_component {
   width: 300px;
   height: 25px;
-  border: 1px solid gray;
-  background-color: black;
+  border: 1px solid $touch_color;
+  background-color: $base_color;
   border-radius: 4px;
   overflow: hidden;
   position: relative;
   .progress_value {
     width: 90% !important;
     height: 100%;
-    background-color: white;
+    background-color: $secondary_color;
   }
 }`;
         let cod = document.getElementsByTagName("code");
@@ -2753,6 +3145,15 @@ li {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
 <div class="testimonial_component">
   <p class="testimonial_content">
@@ -2803,15 +3204,15 @@ li {
   height: fit-content;
   padding: 20px 10px;
   border-radius: 10px;
-  background-color: #09090b;
+  background-color: $base_color;
   display: flex;
-  border: 1px solid gray;
-  color: gray;
+  border: 1px solid $touch_color;
+  color: $font_color;
   gap: 20px;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-    .testimonial_information {
+  .testimonial_information {
     width: 100%;
     display: flex;
     align-items: flex-start;
@@ -2822,12 +3223,12 @@ li {
         border-radius: 50px;
         width: 45px;
         height: 45px;
+      }
     }
-  }
-  .testimonial_text_side {
+    .testimonial_text_side {
       p {
-      &:nth-child(1) {
-        color: white;
+        &:nth-child(1) {
+          color: $secondary_color;
         }
       }
     }
@@ -2870,6 +3271,14 @@ li {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
               <div class="scrollable_component">
 <p>v1.1</p>
@@ -2934,7 +3343,7 @@ li {
   overflow-y: scroll;
   p {
     width: 150px;
-    color: white;
+    color: $secondary_color;
   }
 }`;
         let c = document.getElementsByTagName("code");
@@ -2974,6 +3383,14 @@ li {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
             <div class="switch_component">
 <p>Airplane mode</p>
@@ -3000,52 +3417,56 @@ li {
   width: fit-content;
   gap: 10px;
   p {
-    color: white;
+    color: $secondary_color;
   }
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-  input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  &:checked + .slider {
-    background-color: #ffffff;
-    &::before {
-      transform: translateX(26px);
-    }
-  }
-}
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgb(32, 32, 32);
-  transition: 0.4s;
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
 
-  &::before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: rgb(0, 0, 0);
-    transition: 0.4s;
-  }
+      &:checked + .slider {
+        background-color: $secondary_color;
 
-  &.round {
-    border-radius: 34px;
-      &::before {
-        border-radius: 50px;
+        &::before {
+          transform: translateX(26px);
+        }
       }
-     }
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $touch_color;
+      transition: 0.4s;
+
+      &::before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: $base_color;
+        transition: 0.4s;
+      }
+
+      &.round {
+        border-radius: 34px;
+
+        &::before {
+          border-radius: 50px;
+        }
+      }
     }
   }
 }`;
@@ -3059,7 +3480,7 @@ li {
           Prism.highlightElement(cc[i]);
         }
         break;
-      case "🟢🟡 copy":
+      case "copy":
         content_side.innerHTML = "";
         content_side_2.innerHTML = "";
         content_side_3.innerHTML = "";
@@ -3086,6 +3507,14 @@ li {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
 
         content_side.innerHTML = `
 <div class="copy_component">
@@ -3141,6 +3570,14 @@ li {
     }
   }
 }`;
+        js_code.innerText = `
+let copy_button = document.querySelector(".copy_button");
+copy_button.addEventListener("click", () => {
+  let copy_input = document.querySelector(".copy_input");
+  copy_input.select();
+  copy_input.setSelectionRange(0, 9999);
+  navigator.clipboard.writeText(copy_input.value);
+});`;
         let c3c = document.getElementsByTagName("code");
         for (let i = 0; i < c3c.length; i++) {
           // Zameni <br> tagove sa novim redovima
@@ -3158,7 +3595,7 @@ li {
           navigator.clipboard.writeText(copy_input.value);
         });
         break;
-      case "🟢 contact":
+      case "contact":
         content_side.innerHTML = "";
         content_side_2.innerHTML = "";
         content_side_3.innerHTML = "";
@@ -3185,6 +3622,14 @@ li {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         html_code.innerText = `
 <div class="contact_wrapper">
   <h1>CONTACT ME</h1>
@@ -3192,7 +3637,7 @@ li {
     You can contact me via form below.
   </p>
   <input type="text" placeholder="Email" class="input_component" />
-  <textarea placeholder="Message" class="textarea_component message"></textarea>
+  <textarea placeholder="Message" class="textarea_component"></textarea>
   <button class="button_component">Send message</button>
 </div>`;
         css_code.innerText = `
@@ -3243,7 +3688,7 @@ li {
           Prism.highlightElement(c32c[i]);
         }
         break;
-      case "🟢 register":
+      case "register":
         content_side.innerHTML = "";
         content_side_2.innerHTML = "";
         content_side_3.innerHTML = "";
@@ -3270,62 +3715,53 @@ li {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
 <div class="register_form_component">
   <h1>Register</h1>
   <input
     placeholder="Username"
     type="text"
-    class="username input_component"
-    bind:this={username}
+    class="input_component"
   />
   <input
     placeholder="Password"
     type="password"
-    class="password input_component"
-    bind:this={password}
+    class="input_component"
   />
   <input
     placeholder="Repeat password"
     type="password"
-    class="repeat_password input_component"
-    bind:this={repeat_password}
+    class="input_component"
   />
-  <button
-    class="button_component create_account"
-    bind:this={create_account}
-    on:click={create}
-  >
-    Register
-</button>`;
+  <button class="button_component">Register</button>`;
         html_code.innerText = `
 <div class="register_form_component">
-  <h1>Napravi nalog</h1>
+  <h1>Register</h1>
   <input
     placeholder="Username"
     type="text"
-    class="username input_component"
-    bind:this={username}
+    class="input_component"
   />
   <input
     placeholder="Password"
     type="password"
-    class="password input_component"
-    bind:this={password}
+    class="input_component"
   />
   <input
     placeholder="Repeat password"
     type="password"
-    class="repeat_password input_component"
-    bind:this={repeat_password}
+    class="input_component"
   />
-  <button
-    class="button_component create_account"
-    bind:this={create_account}
-    on:click={create}
-  >
-    Register
-</button>`;
+  <button class="button_component">Register</button>
+</div>`;
         css_code.innerText = `
 .register_form_component {
   display: flex;
@@ -3336,16 +3772,12 @@ li {
   margin-top: 5%;
   h1 {
     text-align: center;
-    color: white;
+    color: $secondary_color;
   }
   input,
   button {
     width: 95%;
     max-width: 720px;
-  }
-  a {
-    color: gray;
-    text-decoration: none;
   }
 }`;
         let c32c2 = document.getElementsByTagName("code");
@@ -3358,7 +3790,7 @@ li {
           Prism.highlightElement(c32c2[i]);
         }
         break;
-      case "🟢 forum theme":
+      case "forum theme":
         content_side.innerHTML = "";
         content_side_2.innerHTML = "";
         content_side_3.innerHTML = "";
@@ -3385,6 +3817,14 @@ li {
         css_code_6.innerText = "";
         css_code_7.innerText = "";
         css_code_8.innerText = "";
+        js_code.innerText = "";
+        js_code_2.innerText = "";
+        js_code_3.innerText = "";
+        js_code_4.innerText = "";
+        js_code_5.innerText = "";
+        js_code_6.innerText = "";
+        js_code_7.innerText = "";
+        js_code_8.innerText = "";
         content_side.innerHTML = `
 <div class="forum_theme_component">
   <p>TITLE</p>
@@ -3478,6 +3918,3 @@ const closeDialog = () => {
   const dialog = document.querySelector(".alert_dialog_component");
   dialog.close();
 };
-//IMAGE UPLOAD COMPONENT
-
-//KOD STRANICE

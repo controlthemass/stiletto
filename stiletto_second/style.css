@@ -1001,16 +1001,12 @@ ul li a {
 }
 .register_form_component h1 {
   text-align: center;
-  color: white;
+  color: #fafafa;
 }
 .register_form_component input,
 .register_form_component button {
   width: 95%;
   max-width: 720px;
-}
-.register_form_component a {
-  color: gray;
-  text-decoration: none;
 }
 
 .forum_theme_component {
@@ -1104,13 +1100,22 @@ ul li a {
 .docs_wrapper .code_side .highlight_text {
   color: #fafafa !important;
 }
-.docs_wrapper .content_side {
+.docs_wrapper .content_side,
+.docs_wrapper .content_side_1,
+.docs_wrapper .content_side_2,
+.docs_wrapper .content_side_3,
+.docs_wrapper .content_side_4,
+.docs_wrapper .content_side_5,
+.docs_wrapper .content_side_6,
+.docs_wrapper .content_side_7,
+.docs_wrapper .content_side_8 {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   height: -moz-fit-content !important;
   height: fit-content !important;
+  margin-bottom: 20px;
 }
 .docs_wrapper .code_side {
   height: -moz-fit-content;
@@ -1150,12 +1155,7 @@ ul li a {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
   padding: 20px;
-}
-.group:nth-child(even) {
-  margin-top: 30px;
-  margin-bottom: 30px;
 }
 .group pre {
   width: 100%;
@@ -1223,4 +1223,68 @@ code {
   color: white !important;
   background-color: none !important;
   background: none !important;
+}
+
+.none {
+  display: none !important;
+}
+
+.block {
+  display: block !important;
+}
+
+.language-css:nth-child(3) {
+  cursor: pointer;
+  background: rgb(15, 15, 15) !important;
+  background: linear-gradient(90deg, rgb(15, 15, 15) 41%, rgb(204, 102, 153) 100%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f0f0f",endColorstr="#cc6699",GradientType=1);
+  margin: 1px !important;
+  border-radius: 5px;
+}
+.language-css:nth-child(3):hover {
+  outline: 1px solid rgb(204, 102, 153);
+}
+
+.language-html:nth-child(2) {
+  cursor: pointer;
+  margin: 1px !important;
+  background: rgb(15, 15, 15) !important;
+  background: linear-gradient(90deg, rgb(15, 15, 15) 41%, rgb(227, 76, 38) 100%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f0f0f",endColorstr="#e34c26",GradientType=1);
+  border-radius: 5px;
+}
+.language-html:nth-child(2):hover {
+  outline: 1px solid rgb(227, 76, 38);
+}
+
+.language-js:nth-child(4) {
+  cursor: pointer;
+  margin: 1px !important;
+  background: rgb(15, 15, 15) !important;
+  background: linear-gradient(90deg, rgb(15, 15, 15) 41%, rgb(240, 219, 79) 100%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f0f0f",endColorstr="#f0db4f",GradientType=1);
+  border-radius: 5px;
+}
+.language-js:nth-child(4):hover {
+  outline: 1px solid rgb(240, 219, 79);
+}
+
+.operator {
+  background-color: transparent !important;
+  color: white !important;
+}
+
+@keyframes blinker {
+  0% {
+    background-color: #09090b;
+  }
+  50% {
+    background-color: #00dc82;
+  }
+  100% {
+    background-color: #09090b;
+  }
+}
+.green_blink {
+  animation: blinker 500ms;
 }/*# sourceMappingURL=style.css.map */
